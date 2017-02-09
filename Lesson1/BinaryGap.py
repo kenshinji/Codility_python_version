@@ -22,24 +22,18 @@
 # print "this is a debug message"
 
 def solution(N):
-    # write your code in Python 2.7
-    tmp = ""
-    flag = False
-    count = 0
-    max = 0
-    while (N != 0):
-        if (N % 2 == 0):
-            if (flag):
-                count = count + 1
+    count, max, flag = 0, 0, False
+    while(N > 0):
+        if N % 2 == 0:
+            if flag:
+                count += 1
         else:
-            if (not flag):
+            if not flag:
                 flag = True
             else:
-                if (count > max):
+                if count > max:
                     max = count
-                    count = 0
-                else:
-                    count = 0
+                count = 0
         N = N / 2
     return max
 
